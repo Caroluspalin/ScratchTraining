@@ -27,7 +27,7 @@ def laske_kasvu(tilastot, kaupungin_nimi):
             for tilasto in tilastot:
                     if tilasto["kaupunki"] == kaupungin_nimi:
                             kasvu = tilasto["vuodet"]["2023"] - tilasto["vuodet"]["2018"]
-                            return f"Kaupungin väestö {kaupungin_nimi} kasvoi {kasvu} viimeisen 5 vuoden aikana"
+                            return f"Kaupungin väestö {kaupungin_nimi}lla kasvoi {kasvu} viimeisen 5 vuoden aikana"
             
             return "Kaupunkia ei löytynyt."
 
