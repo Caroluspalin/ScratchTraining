@@ -35,4 +35,3 @@ def kaupungin_saa_raportti():
         return print("kaupunkia {kaupunki} ei löytynyt")
         
 
-print(kaupungin_saa_raportti())
