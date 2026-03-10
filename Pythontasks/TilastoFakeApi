@@ -1,0 +1,53 @@
+# 1. TYÖNTEKIJÄ 1: Sinun tekemäsi alkuperäinen funktio
+def laske_kasvu(tilastot, kaupungin_nimi):
+    for tilasto in tilastot:
+        if tilasto["kaupunki"] == kaupungin_nimi:
+            kasvu = tilasto["vuodet"]["2023"] - tilasto["vuodet"]["2018"]
+            return kasvu # Huom! Palautetaan pelkkä numero, ei tekstiä vielä!
+    return None
+
+# 2. TYÖNTEKIJÄ 2: Hakee pinta-alan (tässä feikkidataa esimerkin vuoksi)
+def hae_pinta_ala(kaupungin_nimi):
+    alat = {"Vantaa": 240, "Espoo": 312, "Tampere": 689}
+    return alat.get(kaupungin_nimi, "Tuntematon")
+
+# 3. TYÖNTEKIJÄ 3: Hakee koordinaatit
+def hae_koordinaatit(kaupungin_nimi):
+    koordinaatit = {"Vantaa": "60.29, 25.04", "Espoo": "60.20, 24.65", "Tampere": "61.49, 23.78"}
+    return koordinaatit.get(kaupungin_nimi, "Tuntematon")
+
+
+# 👑 4. PÄÄLLIKKÖ: Kokoaa kaiken yhteen!
+def luo_kaupunkiraportti(tilastot, kaupungin_nimi):
+    # Päällikkö käskee työntekijöitä ja tallentaa tulokset muuttujiin
+    kasvu = laske_kasvu(tilastot, kaupungin_nimi)
+    
+    # Jos kaupunkia ei löytynyt listalta (kasvu on None), lopetetaan heti
+    if kasvu == None:
+        return f"Virhe: Kaupunkia '{kaupungin_nimi}' ei löytynyt tilastoista."
+    
+    ala = hae_pinta_ala(kaupungin_nimi)
+    sijainti = hae_koordinaatit(kaupungin_nimi)
+    
+    # Päällikkö rakentaa lopuksi yhden ison, hienon f-stringin!
+    raportti = (
+        f"--- RAPORTTI: {kaupungin_nimi.upper()} ---\n"
+        f"Sijainti (Lat, Lon): {sijainti}\n"
+        f"Pinta-ala: {ala} km2\n"
+        f"Väestönkasvu (5v): {kasvu} asukasta\n"
+        f"--------------------------"
+    )
+    return raportti
+
+
+# Testataan meidän API-dataa:
+suomen_tilastot = [
+    {"kaupunki": "Vantaa", "vuodet": {"2018": 228166, "2023": 247375}},
+    {"kaupunki": "Espoo", "vuodet": {"2018": 283632, "2023": 314024}},
+    {"kaupunki": "Tampere", "vuodet": {"2018": 251943, "2023": 291753}}
+]
+
+# Kutsutaan vain Päällikkö-funktiota:
+print(luo_kaupunkiraportti(suomen_tilastot, "Vantaa"))
+print(luo_kaupunkiraportti(suomen_tilastot, "Tampere"))
+print(luo_kaupunkiraportti(suomen_tilastot, "Turku")) # Turku puuttuu datasta
