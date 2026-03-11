@@ -2,7 +2,10 @@ import requests
 
 # Työntekijä 1
 def hae_koordinaatit(kaupunki):
-    sijainnit = {"vantaa": {"lat": 60.29, "lon": 25.04}, "helsinki": {"lat": 60.17, "lon": 24.94}, "tampere": {"lat": 61.50, "lon": 23.79}}
+    sijainnit = {"vantaa": {"lat": 60.29, "lon": 25.04}, 
+                 "helsinki": {"lat": 60.17, "lon": 24.94},
+                   "tampere": {"lat": 61.50, "lon": 23.79}
+                   }
     return sijainnit.get(kaupunki.lower()) 
 
 # Työntekijä 2
