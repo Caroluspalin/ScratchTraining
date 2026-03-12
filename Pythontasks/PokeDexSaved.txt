@@ -1,1 +1,6 @@
 Pokemon: pikachu, Pituus: 4, Paino: 60
+
+Pokemon: charizard, Pituus: 17, Paino: 905
+Pokemon: charizard, Pituus: 17, Paino: 905
+Pokemon: bulbasaur, Pituus: 7, Paino: 69
+Pokemon: snorlax, Pituus: 21, Paino: 4600
