@@ -1,0 +1,1 @@
+Pokemon: pikachu, Pituus: 4, Paino: 60

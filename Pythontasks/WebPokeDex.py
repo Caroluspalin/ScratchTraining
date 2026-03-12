@@ -13,9 +13,14 @@ def hae_pokemon(nimi):
             "paino": data["weight"],
             "kuva": data["sprites"]["front_default"]
         }
+    
 
     except Exception:
         return None
+    
+def tallenna_raportti(teksti):
+    with open("PokeDexSaved.txt","a", encoding="utf-8") as tiedosto:
+        tiedosto.write(teksti + "\n")
 
 
 # ----------------------------------------------------
@@ -37,6 +42,11 @@ if st.button("Etsi Pokemon!"):
         st.image(pokemon_data['kuva'])
         st.write(f"Pokemonisi pituus on :{pokemon_data['pituus']} kg")
         st.write(f"Pokemonisi paino on : {pokemon_data['paino']} cm")
+
+        loki_teksti = f"Pokemon: {pokemon_data['nimi']}, Pituus: {pokemon_data['pituus']}, Paino: {pokemon_data['paino']}"
+
+        tallenna_raportti(loki_teksti)
+
 
        
         
