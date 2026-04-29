@@ -47,4 +47,4 @@ def win(has_eaten_all_dots, power_pellet_active, touching_ghost):
 
 
 
-print(lose(True ,True))
+print(127.5 / 1.2)
