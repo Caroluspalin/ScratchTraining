@@ -19,6 +19,7 @@ public class Message {
 
             name = mail.substring(0, mail.indexOf("@"));
             email = mail.substring(mail.indexOf("@" + 1));
+            
 
             System.out.printf("Sinun käyttäjänimesi: %s \n", name);
             System.out.printf("Sinun mail tunnuksesi on %s \n", email);
@@ -30,5 +31,6 @@ public class Message {
         }
 
         scanner.close();
+    
         
 
