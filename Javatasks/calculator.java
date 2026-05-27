@@ -43,9 +43,6 @@ public class calculator {
             System.out.printf("%.2f\n", result);
         }
 
-
-        
-
         scanner.close();
 
 
