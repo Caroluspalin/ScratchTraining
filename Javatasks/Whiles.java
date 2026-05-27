@@ -23,13 +23,11 @@ public class Whiles {
         
         System.out.println("your age is " + age);
 
-        while(!student) {
-            System.out.print("Are you a student (true / false): ");
-            student = scanner.nextBoolean();
-            if(student == true) {
-                break;
-            }
-            student = false;
+        if (student) {
+            System.out.println("You are a student");
+        }
+        else {
+            System.out.println("You are not a student");
         }
 
         System.out.println("you are a student");
