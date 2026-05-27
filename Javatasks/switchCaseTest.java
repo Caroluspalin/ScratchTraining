@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class calculator {
+public class switchCaseTest {
     public static void main(String[] args) {
 
         String paeva;
