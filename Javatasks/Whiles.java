@@ -7,6 +7,7 @@ public class Whiles {
 
         String name = "";
         int age = 0;
+        Boolean student = false;
 
         while(name.isEmpty()) {
             System.out.print("Enter your name: ");
@@ -21,6 +22,17 @@ public class Whiles {
         } while (age < 0 || age > 120);
         
         System.out.println("your age is " + age);
+
+        while(!student) {
+            System.out.print("Are you a student (true / false): ");
+            student = scanner.nextBoolean();
+            if(student == true) {
+                break;
+            }
+            student = false;
+        }
+
+        System.out.println("you are a student");
 
         scanner.close();
     }
